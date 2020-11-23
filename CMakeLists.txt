@@ -23,5 +23,7 @@ add_custom_target(${JAVAH}
 include_directories(${JNI_INCLUDE_DIRS})
 file(GLOB SOURCE_FILES source/*.cpp)
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY_RELEASE ${JNI_SOURCE_PROJECT}/libs)
 
 add_dependencies(${PROJECT_NAME} ${JAVAH})
