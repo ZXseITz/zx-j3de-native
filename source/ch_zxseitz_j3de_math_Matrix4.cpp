@@ -1,10 +1,10 @@
-#include "ch_zxseitz_j3de_math_Matrix4.h"
+#include "../header/ch_zxseitz_j3de_math_Matrix4.h"
 #include <cstdlib>
 
 const int SIZE = 16;
 
 JNIEXPORT jboolean JNICALL Java_ch_zxseitz_j3de_math_Matrix4_equalsC
-        (JNIEnv *env, jclass c, jfloatArray a, jfloatArray b) {
+        (JNIEnv *env, jclass c, jfloatArray a, jfloatArray b, jfloat t) {
     auto *pa = env->GetFloatArrayElements(a, nullptr);
     auto *pb = env->GetFloatArrayElements(b, nullptr);
 
@@ -13,7 +13,7 @@ JNIEXPORT jboolean JNICALL Java_ch_zxseitz_j3de_math_Matrix4_equalsC
     auto i = 0;
     auto check = true;
     while (check && i < SIZE) {
-        check = abs((*tpa) - (*tpb)) < 0.000001;
+        check = abs((*tpa) - (*tpb)) < t;
         i++; tpa++; tpb++;
     }
 

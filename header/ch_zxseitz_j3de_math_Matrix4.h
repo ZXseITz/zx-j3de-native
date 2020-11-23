@@ -12,10 +12,10 @@ extern "C" {
 /*
  * Class:     ch_zxseitz_j3de_math_Matrix4
  * Method:    equalsC
- * Signature: ([F[F)Z
+ * Signature: ([F[FF)Z
  */
 JNIEXPORT jboolean JNICALL Java_ch_zxseitz_j3de_math_Matrix4_equalsC
-  (JNIEnv *, jclass, jfloatArray, jfloatArray);
+  (JNIEnv *, jclass, jfloatArray, jfloatArray, jfloat);
 
 /*
  * Class:     ch_zxseitz_j3de_math_Matrix4
